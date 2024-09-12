@@ -199,12 +199,10 @@
     <div class="popup-content">
       <strong><p>I hope you enjoy! ❤️</p></strong>
       <button id="yes-button">Thank you!</button>
-      <button id="no-button">Fuck you!</button>
     </div>
   <script>
     const popup = document.getElementById('sound-popup');
     const yesButton = document.getElementById('yes-button');
-    const noButton = document.getElementById('no-button');
     const backgroundMusic = document.getElementById('backgroundMusic');
 
     function playMusic() {
@@ -231,18 +229,11 @@
         setUserChoice('yes');
         popup.style.display = 'none';
     });
-
-    
-    noButton.addEventListener('click', () => {
-        setUserChoice('no');
-        popup.style.display = 'none';
-    });
-
-    
+  
     window.onload = () => {
     localStorage.removeItem('musicChoice'); // Clear stored choice
     popup.style.display = 'flex'; // Show the pop-up
-};
+    };
 </script>
 
 </body>
