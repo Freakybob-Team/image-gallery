@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
       <meta name="description" content="A place for Freakybob.">
-    <meta content="Freakybob" property="og:title" />
+    <meta content="Freakybob Image Gallery" property="og:title" />
     <meta content="Freakybob.site Image Gallery! (WIP)" property="og:description" />
-    <meta content="https://freakybob.site/image-gallery" property="og:url" />
+    <meta content="https://freakybob-team.github.io/Image.gallery/" property="og:url" />
     <meta content="https://github.com/5quirre1/Freakybob.site/blob/main/Snapshots/Screenshot%202024-08-29%2012.38.20%20AM.png" property="og:image" />
     <meta content="#006b79" data-react-helmet="true" name="theme-color" />
   <link rel="icon" type="image/icon" href="images/favicon.png">
@@ -155,17 +155,32 @@
   <div class="top-bar">
     <h1>Welcome to the image gallery!</h1>
     <strong><p>A place where photos, Fan-art, or videos can be seen!</p></strong>
-    <h2>⚠️The old image gallery now links to here. Links are not broken, as the old image gallery hosted on freakybob.site has not been deleted, just replaced with a notice.⚠️</h2>
     <h2>
       <marquee>This page is VERY New meaning that this page is still in development. Plz be patient and don't Annoy the Devs :)</marquee>
     </h2>
   </div>
   <header>
+        <button id="mute-button" style="display:none;">Mute Music</button>
     <a href="https://freakybob.site">
       <button>Go back to main Website!</button>
     </a>
   </header>
   <main>
+    <script>
+       const muteButton = document.getElementById('mute-button');
+          function toggleMusic() {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            muteButton.textContent = 'Mute Music';
+        } else {
+            backgroundMusic.pause();
+            muteButton.textContent = 'Unmute Music';
+        }
+    }
+
+    muteButton.addEventListener('click', toggleMusic);
+
+    </script>
     <div class="gallery">
       <img src="images/spinchbob.png" alt="Spinchbob Character">
       <img src="images/sponebob.jpg" alt="SpongeBob Image">
@@ -184,7 +199,7 @@
     <div class="popup-content">
       <strong><p>I hope you enjoy! ❤️</p></strong>
       <button id="yes-button">Thank you!</button>
-      <button id="no-button">this button will be removed soon™️</button>
+      <button id="no-button">Fuck you!</button>
     </div>
   <script>
     const popup = document.getElementById('sound-popup');
