@@ -12,41 +12,45 @@
   <title>Image Gallery!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
-
-
-* {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
     body {
-      background-image: url("images/pexels-pixabay-33545.jpg");
-      background-size: 2000px;
+      background-image: url("images/spongebob's-big-red-chair-in-house.jpg");
+      background-color: rgb(65, 98, 190);
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       margin: 0;
       font-family: "Noto Sans", sans-serif;
     }
-
+    .top-bar {
+      padding: 15px;
+      background-color: #FF91AF;
+      border-bottom: 4px solid #FF91AF;
+      color: #3077fa;
+      font-size: 1em;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      top: 0;
+    }
+    .top-bar h1 {
+      color: rgb(184, 14, 184);
+      margin: 0;
+      font-size: 2em;
+    }
+    .top-bar p {
+      margin: 5px 0 0 0;
+      font-size: 1.2em;
+    }
     header {
       text-align: center;
       padding: 10px;
-      gap:50px;
     }
-
     main {
       flex-grow: 1;
     }
-
-    h1, p {
-      text-align: center;
-    }
-
-
     footer {
       padding: 15px;
       background-color: #FF91AF;
@@ -59,41 +63,55 @@
       bottom: 0;
     }
     button {
-      background: none;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1)rgba(255,255,255,0)) ;
-    border: 1px solid rgba(255,255,2555,0.18);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
-    border-radius: 15px;
+      background-color: #ffbb00;
+      border: none;
+      border-radius: 5px;
+      color: #333;
       padding: 10px 20px;
       font-size: 1em;
       cursor: pointer;
       margin-top: -20px;
-      transition: all .5s ease-in-out;
     }
     button:hover {
-      color: #ffff;
+      background-color: #0eca1a;
+      transform: scale(1.10);
     }
-
-    #container {
-      background: none;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1)rgba(255,255,255,0)) ;
-    border: 1px solid rgba(255,255,2555,0.18);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
-    border-radius: 15px;
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 10px;
     }
-    #container img {
+    .gallery img {
       width: 200px;
       height: 200px;
       margin: 10px;
       object-fit: cover;
       border-radius: 10px;
     }
+    .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 77, 70, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: rgb(168, 2, 57);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.9s ease;
+        }
 
         @keyframes fadeIn {
             from {
@@ -134,11 +152,14 @@
   </style>
 </head>
 <body>
+  <div class="top-bar">
     <h1>Welcome to the image gallery!</h1>
     <strong><p>A place where photos, Fan-art, or videos can be seen!</p></strong>
-    <div id="container">
+    <h2>
+      <marquee>This page is VERY New meaning that this page is still in development. Plz be patient and don't Annoy the Devs :)</marquee>
+    </h2>
+  </div>
   <header>
-    <h1>Image gallery rewrite(finally). Enjoy!</h1>
            <button id="mute-button">Mute Music</button>
     <a href="https://freakybob.site">
       <button>Go back to main Website!</button>
@@ -160,6 +181,7 @@
     muteButton.addEventListener('click', toggleMusic);
 
     </script>
+    <div class="gallery">
       <img src="images/spinchbob.png" alt="Spinchbob Character">
       <img src="images/sponebob.jpg" alt="SpongeBob Image">
       <img src="images/freakbobfounddead.png" alt="Freakbob Found Dead Scene">
@@ -171,8 +193,52 @@
       <!-- More images can be added later MASHKJKR#F-->
     </div>
   </main>
+  <footer>
+    <p><strong>Freakybob Image Gallery - 2.1 Silly Squidward - Licensed under GPL 3.0</strong></p>
+  </footer>
   <audio id="backgroundMusic" loop>
     <source src="https://dn720302.ca.archive.org/0/items/wiiumusic/27%20-%20eShop%20-%20Menu%20%28Track%202%29.mp3" type="audio/mp3">
   </audio>
+  <div id="sound-popup" class="popup">
+    <div class="popup-content">
+      <strong><p>I hope you enjoy! ❤️</p></strong>
+      <button id="yes-button">Thank you!</button>
+    </div>
+  <script>
+    const popup = document.getElementById('sound-popup');
+    const yesButton = document.getElementById('yes-button');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+
+    function playMusic() {
+        backgroundMusic.play();
+    }
+
+    function stopMusic() {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+
+    
+    function setUserChoice(choice) {
+        localStorage.setItem('musicChoice', choice);
+    }
+
+
+    function getUserChoice() {
+        return localStorage.getItem('musicChoice');
+    }
+
+    yesButton.addEventListener('click', () => {
+        playMusic();
+        setUserChoice('yes');
+        popup.style.display = 'none';
+    });
+  
+    window.onload = () => {
+    localStorage.removeItem('musicChoice'); // Clear stored choice
+    popup.style.display = 'flex'; // Show the pop-up
+    };
+</script>
+
 </body>
 </html>
